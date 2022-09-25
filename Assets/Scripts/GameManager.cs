@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         sentence = String.Empty;
+        inputBox.text = sentence;
     }
 
     private void Start()
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string incorrectSentence;
 
     [SerializeField] private TMP_Text textBox;
+    [SerializeField] private TMP_Text inputBox;
 
     [Header("Responses")]
     [SerializeField] private string initialStatement;
@@ -72,6 +74,8 @@ public class GameManager : MonoBehaviour
         {
             sentence += " " + s;
         }
+
+        inputBox.text = "\"" + sentence + "\"";
     }
 
     public void ResetSentence()
